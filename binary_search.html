@@ -1,0 +1,38 @@
+
+<script>
+
+//O(log2 n) 
+ binary_search = (array_list, search_item) => {
+
+    let = low =0; let high = array_list.length-1;
+
+    while(low <= high){
+ 
+           let mid=Math.floor((low + high)/2); 
+
+          if(array_list[mid] === search_item) return true;
+          else if(array_list[mid] > search_item)
+          high = mid - 1; //move to the left by half if guess is too higher than search item
+          else 
+          low = mid + 1;  //move to the right by half
+    }
+
+return false; //default - none found
+}
+
+ 
+//Test the binary search  function
+window.onload = function()
+{
+    let array_list = [1,2,3,5,6];
+    let isFound = binary_search(array_list, 1);
+
+    document.getElementById("result").innerHTML = isFound;
+
+}
+
+  
+
+</script>
+
+<div id="result"></div>

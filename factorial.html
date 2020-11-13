@@ -1,0 +1,24 @@
+
+<script>
+ 
+    //Recursive function factorial
+       factorial = (n) => { 
+          
+           if(n ==1 ){  return n;}
+           else{ return n*factorial(n-1)} 
+      }
+      
+       
+      //Test the Selection Sort  function
+      window.onload = function()
+      {
+
+          let factorial_result = factorial(5);
+          document.getElementById("result").innerHTML = factorial_result;
+      }
+      
+        
+      
+      </script>
+      
+      <div id="result"></div>

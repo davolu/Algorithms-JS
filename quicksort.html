@@ -1,0 +1,36 @@
+
+<script>
+ 
+    // Quick Sort  
+       quick_sort = (array_list) => {
+  
+               if(array_list.length<2){
+                   return array_list;
+               }
+               else{
+
+                let pivot  = array_list[0];
+
+                let lesser_than_pivot  = array_list.filter(x=> x<pivot)
+                let greater_than_pivot  = array_list.filter(x=> x>pivot);
+                
+                return quick_sort(lesser_than_pivot).concat(pivot).concat(quick_sort(greater_than_pivot))
+               }
+      }
+      
+       
+      //Test the Selection Sort  function
+      window.onload = function()
+      {
+          let array_list = [5,2,1,4,7,22,15];
+          let sorted = quick_sort(array_list);
+      
+         document.getElementById("result").innerHTML = sorted;
+      
+      }
+      
+        
+      
+      </script>
+      
+      <div id="result"></div>

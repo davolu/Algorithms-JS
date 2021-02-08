@@ -1,0 +1,29 @@
+let graph = {
+    'A' : ['B','C'],
+    'B' : ['D', 'E'],
+    'C' : ['F'],
+    'D' : [],
+    'E' : ['F'],
+    'F' : []
+}
+
+let visited_nodes =[]; //store visited visited_nodes
+
+function dfs(visited_nodes, graph, node){
+
+    if(!visited_nodes.includes(node)){
+        visited_nodes.push(node);
+ 
+    
+        for (const neighbour of graph[node]){
+             dfs(visited_nodes, graph, neighbour)
+
+        }
+
+    }
+}
+
+
+dfs(visited_nodes, graph, "A");
+
+console.log(visited_nodes); //final result
